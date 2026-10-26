@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  display: block;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #1a1033, #0d1b3a);
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.screen {
+  text-align: center;
+  padding: 20px;
+}
+
+/* hidden class -> la usamos desde JS */
+.hidden {
+  display: none;
+}
+
+/* homescreen */
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 30px;
+}
+
+h1 span {
+  display: block;
+  background: linear-gradient(90deg, #ff5c7a, #b17dff, #4da6ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+button {
+  display: block;
+  margin: 12px auto;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: #b17dff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c79bff;
+}
+
+#home-btn {
+  background: transparent;
+  border: 2px solid #b17dff;
+}
+
+/* gamescreen */
+#message {
+  min-height: 24px;
+}
+
+#board {
+  display: grid; /* las columnas las define el JS según el tamaño */
+  gap: 4px;
+  justify-content: center;
+  margin: 20px 0;
+  touch-action: none; /* evita que el dedo mueva la página mientras dibujas */
+  user-select: none;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  background: #2b2547;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* El punto blanco que marca los extremos de cada color */
+.cell.dot::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+}
+
+.buttons button {
+  display: inline-block;
+  margin: 6px;
+}
